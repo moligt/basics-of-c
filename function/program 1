@@ -1,1 +1,39 @@
+#include<stdio.h>
+int main()
+{
+	void average(float mark[10][5]);
+	float mark[10][5];
 
+	int i,j;
+	printf("输入第10个学生5个科目的成绩：");  
+	for(j=0;j<5;j++)
+	for(i=0;i<10;i++)	   
+    scanf("%f",&mark[i][j]);
+    average(mark);
+    return 0;
+
+
+	
+}
+void average(float mark[10][5])
+{
+	int i,j,a,b;
+	float c[10],s[5];
+	c[6]=0; 
+	for(j=0;j<5;j++)
+	{   
+	  
+	for(i=0;i<10;i++)
+	{  
+	    printf("j=%d i=%d  ",j,i);
+		c[i]+=mark[i][j]/5;
+		s[j]+=mark[i][j]/10;
+		printf("mark=%f   ",mark[i][j]);
+		printf("%f %f\n ",s[j],c[i]);
+	}
+	
+}   
+    for(i=0;i<10;i++)
+    printf("第%d个学生的平均成绩为:%.2f\n",i+1,c[i]);
+    for(j=0;j<5;j++)
+    printf("%d科目的平均分为:%.2f\n",j+1,s[j]);
